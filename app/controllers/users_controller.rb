@@ -22,5 +22,11 @@ class UsersController < ApplicationController
       redirect_to action: :index
     end
   end
+
+  private
+  def prototype_params
+    params.require(:user).permit(:name, :email, :password, :password_confirmation)
+  end
+
   
 end
